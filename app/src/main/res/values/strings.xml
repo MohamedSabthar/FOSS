@@ -10,4 +10,5 @@
     <string name="barcode">Barcode</string>
     <string name="imagelink">ImageLink</string>
     <string name="qrcode">Qrcode</string>
+    <string name="emaillayout">E-Mail</string>
 </resources>

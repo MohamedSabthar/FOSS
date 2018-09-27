@@ -127,7 +127,7 @@
         android:layout_marginStart="15dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/signature"
-        android:scaleType="center"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/Qrcodeid"
         app:srcCompat="@drawable/common_full_open_on_phone" />

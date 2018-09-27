@@ -33,7 +33,7 @@
         android:id="@+id/imagelinkid"
         android:layout_width="146dp"
         android:layout_height="173dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/imagelink"
         android:scaleType="fitCenter"
@@ -42,18 +42,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/common_full_open_on_phone" />
-
-    <TextView
-        android:id="@+id/addrid"
-        android:layout_width="340dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/address"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nicid" />
 
     <TextView
         android:id="@+id/RegNoid"
@@ -128,5 +116,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/common_full_open_on_phone" />
+
+    <TextView
+        android:id="@+id/addrid"
+        android:layout_width="340dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/address"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nicid" />
 
 </android.support.constraint.ConstraintLayout>

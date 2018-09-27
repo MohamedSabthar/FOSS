@@ -7,6 +7,7 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActiviry extends AppCompatActivity {
 
-    private EditText EditText_email, EditText_password; //variables for EditText
+    private TextInputLayout TextLoyout_email, TextLayout_password; //variables for EditText
 
     private FirebaseAuth mAuth;  //declaring firebase authentication
 
@@ -48,15 +49,15 @@ public class LoginActiviry extends AppCompatActivity {
 
 
 
-        EditText_email = findViewById(R.id.emailid);
-        EditText_password = findViewById(R.id.passwordid);
+        TextLoyout_email = findViewById(R.id.InputLaoyout_mailid);
+        TextLayout_password = findViewById(R.id.ImputLaoyout_passwordid);
 
         //Initializing functions to Button_login
         Button_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = EditText_email.getText().toString();
-                String password = EditText_password.getText().toString();
+                String email = TextLoyout_email.getEditText().getText().toString();
+                String password = TextLayout_password.getEditText().getText().toString();
 
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password))
                     Toast.makeText(LoginActiviry.this, "Fields Can't be Empty", Toast.LENGTH_SHORT).show();

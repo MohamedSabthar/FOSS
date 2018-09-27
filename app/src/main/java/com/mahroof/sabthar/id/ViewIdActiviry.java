@@ -32,7 +32,7 @@ public class ViewIdActiviry extends AppCompatActivity {
     private FirebaseUser mCurrentUser;           //to get the current user
 
     private String current_uid;               //variable to store the id of the user
-    private String Name,NIC,RegNo,Address;
+    private String Name,NIC,RegNo,Address,Mail;
     private TextView TextView_name, TextView_address, TextView_RegNo, TextView_NIC;              //variables for text view
     private ImageView ImageView_pic, ImageView_barcode, ImageView_signatre,ImageView_Qrcode;            //variables for image view
 
@@ -60,8 +60,9 @@ public class ViewIdActiviry extends AppCompatActivity {
             public void onClick(View v) {
                 Intent shareIntent=new Intent(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
-                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"MY DETAILS\n---------------------");
-                shareIntent.putExtra(Intent.EXTRA_TEXT,Name+"\n"+RegNo+"\n"+Address);
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,"MY DETAILS");
+                shareIntent.putExtra(Intent.EXTRA_TEXT,
+                        "---------------------\n\n"+"Name : "+Name+"\n\n"+"Reg_no : "+RegNo+"\n\n"+"Address : "+Address+"\n\n"+"Mail : "+Mail+"\n\n---------------------");
                 startActivity(Intent.createChooser(shareIntent,"SHARE VIA"));
             }
         });
@@ -99,6 +100,7 @@ public class ViewIdActiviry extends AppCompatActivity {
                 NIC = dataSnapshot.child("NIC").getValue().toString();
                  RegNo = dataSnapshot.child("RegNo").getValue().toString();
                 Address = dataSnapshot.child("Address").getValue().toString();
+                 Mail=dataSnapshot.child("Mail").getValue().toString();
 
                 //image links
                 final String ID_image = dataSnapshot.child("Image").getValue().toString();         //1
@@ -113,19 +115,20 @@ public class ViewIdActiviry extends AppCompatActivity {
 
                 //Including details in qr
                 StringBuilder buffer=new StringBuilder();
-                buffer.append(Name+"\n"+RegNo+"\n"+Address);
-                String qr=buffer.toString();
+                buffer.append(Name+"\n"+RegNo+"\n"+Address+"\n"+Mail);
+                String qrcode=buffer.toString();
 
-                String bar;
+                //extracting numeric string from String NIC
+                String barcode;
                 if(NIC.length()==10)
-                bar=NIC.substring(0,9);
+                barcode=NIC.substring(0,9);
                 else
-                    bar=NIC;
+                    barcode=NIC;
 
                 //generating Qrcode
                 MultiFormatWriter Qrcode_Writer=new MultiFormatWriter();
                 try{
-                    BitMatrix bitMatrix=Qrcode_Writer.encode(qr, BarcodeFormat.QR_CODE,200,200);
+                    BitMatrix bitMatrix=Qrcode_Writer.encode(qrcode, BarcodeFormat.QR_CODE,200,200);
                     BarcodeEncoder barcodeEncoder=new BarcodeEncoder() ;
                     Bitmap bitmap=barcodeEncoder.createBitmap(bitMatrix);
                     ImageView_Qrcode.setImageBitmap(bitmap);
@@ -140,7 +143,7 @@ public class ViewIdActiviry extends AppCompatActivity {
             //generating Barcode
                 MultiFormatWriter Barcode_Writer=new MultiFormatWriter();
                 try{
-                    BitMatrix bitMatrix=Barcode_Writer.encode(bar, BarcodeFormat.CODE_39,1000,200);
+                    BitMatrix bitMatrix=Barcode_Writer.encode(barcode, BarcodeFormat.CODE_39,1000,200);
                     BarcodeEncoder barcodeEncoder=new BarcodeEncoder() ;
                     Bitmap bitmap=barcodeEncoder.createBitmap(bitMatrix);
                     ImageView_barcode.setImageBitmap(bitmap);
