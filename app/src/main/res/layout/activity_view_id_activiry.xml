@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/imageid1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewIdActiviry">
+
+    <TextView
+        android:id="@+id/nameid1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/barcodeid" />
+
+    <Button
+        android:id="@+id/logoutid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imagelinkid"
+        android:layout_width="146dp"
+        android:layout_height="173dp"
+        android:layout_marginTop="70dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/imagelink"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/common_full_open_on_phone" />
+
+    <TextView
+        android:id="@+id/addrid"
+        android:layout_width="340dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/address"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Nicid" />
+
+    <TextView
+        android:id="@+id/RegNoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/reg_no"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameid1" />
+
+    <TextView
+        android:id="@+id/Nicid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/nic"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegNoid" />
+
+    <ImageView
+        android:id="@+id/barcodeid"
+        android:layout_width="320dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="10dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/barcode"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagelinkid"
+        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+
+    <ImageView
+        android:id="@+id/sigid"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/signature"
+        android:scaleType="centerInside"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Qrcodeid"
+        app:layout_constraintTop_toBottomOf="@+id/addrid"
+        app:srcCompat="@drawable/common_full_open_on_phone" />
+
+    <Button
+        android:id="@+id/shareid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logoutid" />
+
+    <ImageView
+        android:id="@+id/Qrcodeid"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/qrcode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/common_full_open_on_phone" />
+
+</android.support.constraint.ConstraintLayout>
