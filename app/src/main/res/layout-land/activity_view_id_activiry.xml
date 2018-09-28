@@ -7,12 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".ViewIdActiviry">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/backround"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/finalbg" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="108dp"
+        android:contentDescription="@string/corner"
+        android:scaleType="fitEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/aa" />
+
     <TextView
         android:id="@+id/nameid1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/name"
         android:textAllCaps="true"
@@ -22,11 +45,13 @@
 
     <Button
         android:id="@+id/logoutid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="20dp"
-        android:text="@string/logout"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="64dp"
+        android:width="80dp"
+        android:height="80dp"
+        android:background="@drawable/logout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -42,15 +67,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagelinkid"
-        app:srcCompat="@drawable/common_full_open_on_phone" />
+        app:srcCompat="@drawable/loading" />
 
     <Button
         android:id="@+id/shareid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="15dp"
-        android:text="@string/share"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/share"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/logoutid" />
 
@@ -65,7 +90,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/common_full_open_on_phone" />
+        app:srcCompat="@drawable/loading" />
 
     <TextView
         android:id="@+id/addrid"
@@ -109,15 +134,17 @@
     <ImageView
         android:id="@+id/barcodeid"
         android:layout_width="325dp"
-        android:layout_height="43dp"
-        android:layout_marginBottom="60dp"
-        android:layout_marginEnd="30dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/barcode"
         android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/logoutid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
+        app:layout_constraintTop_toBottomOf="@+id/addrid"
+        app:srcCompat="@drawable/loading" />
 
     <ImageView
         android:id="@+id/sigid"

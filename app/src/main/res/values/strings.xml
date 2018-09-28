@@ -11,4 +11,7 @@
     <string name="imagelink">ImageLink</string>
     <string name="qrcode">Qrcode</string>
     <string name="emaillayout">E-Mail</string>
+    <string name="backround">backround</string>
+    <string name="corner">corner</string>
+    <string name="welcomed_screen_pic">welcomed screen pic</string>
 </resources>

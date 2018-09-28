@@ -4,19 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffff"
     tools:context=".LoginActiviry">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/backround"
+        android:scaleType="fitEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/finalbg" />
 
     <Button
         android:id="@+id/loginid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="64dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:text="Login"
+        android:alpha="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <br.com.bloder.magic.view.MagicButton
+        android:id="@+id/infomation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="64dp"
+        app:button_icon="@drawable/front"
+        app:button_icon_height="100dp"
+        app:button_icon_width="100dp"
+        app:expandable_area_color="@android:color/black"
+        app:hide_text="\t\t\t\t\t\t\t Contact the Administrator for More details"
+        app:hide_text_color="@android:color/white"
+        app:hide_text_size="3dp"
+        app:icon_button_color="#959595"
+        app:layout_constraintBottom_toTopOf="@+id/InputLaoyout_mailid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:magic_button_size="120dp" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/InputLaoyout_mailid"

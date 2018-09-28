@@ -26,6 +26,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import br.com.bloder.magic.view.MagicButton;
+
 public class LoginActiviry extends AppCompatActivity {
 
     private TextInputLayout TextLoyout_email, TextLayout_password; //variables for EditText
@@ -46,7 +48,6 @@ public class LoginActiviry extends AppCompatActivity {
 
         //link between XML and variables
         Button_login = findViewById(R.id.loginid);
-
 
 
         TextLoyout_email = findViewById(R.id.InputLaoyout_mailid);
@@ -70,28 +71,13 @@ public class LoginActiviry extends AppCompatActivity {
                     else
                         Toast.makeText(LoginActiviry.this, "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }
-
-
             }
         });
+
+
     }
 
-
-    //function to check the network status
-    private boolean checkNetWork() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfos = connectivityManager.getActiveNetworkInfo();
-
-        if (networkInfos != null)
-            return true;
-
-        return false;
-    }
-
-
-    //
-
-
+    //fucntion to check authentication
     private void loginUser(String email, String password) {
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -113,5 +99,18 @@ public class LoginActiviry extends AppCompatActivity {
 
     }
 
+    //function to check the network status
+    private boolean checkNetWork() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfos = connectivityManager.getActiveNetworkInfo();
+
+        if (networkInfos != null)
+            return true;
+
+        return false;
+    }
+
+
+    //
 
 }
